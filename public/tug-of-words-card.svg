@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Tug of Words</title>
+  <desc id="desc">A bold red and blue tug of war rope, ready for the next word battle.</desc>
+  <rect width="1200" height="720" fill="#f3eee4"/>
+  <path d="M0 545H1200" stroke="#ded8cc" stroke-width="2"/>
+  <text x="76" y="92" fill="#20211f" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="7">TUG OF WORDS</text>
+  <circle cx="1090" cy="82" r="7" fill="#75b66d"/><text x="1110" y="89" fill="#6e6d66" font-family="monospace" font-size="13" letter-spacing="2">LIVE</text>
+  <text x="76" y="275" fill="#20211f" font-family="Arial,sans-serif" font-size="112" font-weight="700" letter-spacing="-7">WORDS HAVE</text>
+  <text x="76" y="385" fill="#ef5946" font-family="Georgia,serif" font-size="120" font-style="italic" letter-spacing="-7">weight.</text>
+  <text x="82" y="443" fill="#77766f" font-family="monospace" font-size="18" letter-spacing="3">TYPE TOGETHER. PULL HARDER.</text>
+  <rect x="76" y="500" width="1048" height="12" rx="6" fill="#b88b58"/>
+  <path d="M76 506h470" stroke="#ef5946" stroke-width="12" stroke-linecap="round"/><path d="M1124 506H654" stroke="#426dca" stroke-width="12" stroke-linecap="round"/>
+  <path d="M589 467h22v67h-22z" rx="4" fill="#d3b38a" stroke="#87633e" stroke-width="4"/><path d="M600 454v-67" stroke="#20211f" stroke-width="4"/><path d="M602 388h59l-15 22 15 22h-59z" fill="#d6f36a" stroke="#20211f" stroke-width="3"/>
+  <text x="80" y="595" fill="#c93e31" font-family="monospace" font-size="15" font-weight="700" letter-spacing="3">RED TEAM</text>
+  <text x="1120" y="595" text-anchor="end" fill="#274fa7" font-family="monospace" font-size="15" font-weight="700" letter-spacing="3">BLUE TEAM</text>
+  <rect x="76" y="635" width="1048" height="1" fill="#ded8cc"/><text x="76" y="674" fill="#99978f" font-family="monospace" font-size="12" letter-spacing="2">REAL-TIME MULTIPLAYER · NODE.JS · WEBSOCKETS</text>
+</svg>
