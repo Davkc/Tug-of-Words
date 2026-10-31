@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3eee4"><meta name="description" content="A fast, chaotic multiplayer word tug-of-war.">
+  <title>Tug of Words — Pull together</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="/"><span class="brand-mark">T<span>↔</span>W</span><span class="brand-name">TUG OF WORDS</span></a><div class="top-actions"><span class="live"><i></i> REAL-TIME WORD BRAWL</span><button id="mute" class="icon-button" aria-label="Toggle sound">♫ <span>Sound on</span></button></div></header>
+    <section id="home" class="home-view">
+      <div class="hero"><div class="eyebrow"><span class="dash"></span> THINK FAST. PULL HARD.</div><h1>Words have<br><em>weight.</em></h1><p>Type together. Pull your team to victory.<br>One rope. Two teams. Zero chill.</p>
+        <div class="rope-preview"><span>RED TEAM</span><div class="mini-rope"><b></b><i></i></div><span>BLUE TEAM</span></div>
+      </div>
+      <div class="join-card"><div class="card-top"><span class="eyebrow">GET IN THE GAME</span><span class="player-count">2—8 PLAYERS</span></div><label class="field-label" for="name">YOUR NAME</label><input id="name" class="text-input" maxlength="18" placeholder="Type your name" autocomplete="nickname">
+        <button id="create" class="button primary full">Create a room <span>↗</span></button>
+        <div class="or"><span></span> OR JOIN WITH A CODE <span></span></div><div class="join-row"><input id="room-code" class="text-input code-input" maxlength="4" placeholder="ROOM CODE" aria-label="Room code"><button id="join" class="button dark">Join</button></div>
+        <button id="practice" class="button ghost full">✦ &nbsp; Practice vs bots</button><p class="fine-print">No download. No account. Just words.</p>
+      </div>
+      <div class="how"><span>01 &nbsp; TYPE THE WORD</span><span>02 &nbsp; PULL THE ROPE</span><span>03 &nbsp; CLAIM THE FLAG</span></div>
+    </section>
+    <section id="game" class="game-view hidden">
+      <div class="game-head"><div><div id="phase-kicker" class="eyebrow">WAITING ROOM</div><h2 id="room-title">Room <span id="room-label">----</span></h2></div><div class="room-actions"><button id="copy-link" class="button small ghost">↗ <span>Copy invite</span></button><button id="leave" class="icon-button" aria-label="Leave room">✕</button></div></div>
+      <div id="lobby" class="lobby-panel"><div class="lobby-title"><div><h3>Pick a side. Get ready.</h3><p>Teams balance automatically as players join.</p></div><div class="ready-status"><span id="ready-count">0 / 0 READY</span></div></div>
+        <div class="teams"><div class="team-box red-box"><div class="team-header"><span><i class="team-dot"></i> RED TEAM</span><b id="red-total">0</b></div><div id="red-players" class="player-list"></div></div><div class="vs">VS</div><div class="team-box blue-box"><div class="team-header"><span><i class="team-dot"></i> BLUE TEAM</span><b id="blue-total">0</b></div><div id="blue-players" class="player-list"></div></div></div>
+        <div class="lobby-bottom"><button id="swap" class="button ghost">⇄ Swap teams</button><div class="host-controls"><span id="host-hint">Waiting for players…</span><button id="ready" class="button primary">Ready up <span>→</span></button><button id="start" class="button dark hidden">Start round <span>→</span></button></div></div>
+      </div>
+      <div id="arena" class="arena hidden"><div class="arena-top"><div class="score red-score"><span>RED</span><b id="red-score">0</b></div><div class="timer-wrap"><div id="timer">1:30</div><span>TIME REMAINING</span></div><div class="score blue-score"><span>BLUE</span><b id="blue-score">0</b></div></div>
+        <div id="twist-banner" class="twist-banner hidden"><span>⚡ TWIST EVENT</span><b id="twist-name">REVERSED WORDS</b><small id="twist-count">10s</small></div>
+        <div class="tug-stage"><div class="flag-line"></div><div class="flag" id="flag">⚑</div><div class="team-label red-label">RED TEAM</div><div class="team-label blue-label">BLUE TEAM</div><div class="rope" id="rope"><div class="rope-strands"></div><div class="rope-knot"></div><span class="rope-tag">PULL</span></div></div>
+        <div class="typing-grid"><article class="word-card red-word-card"><div class="word-card-head"><span><i class="team-dot"></i> YOUR WORD</span><span id="red-streak" class="streak">0 STREAK</span></div><div id="red-word" class="word-display">—</div></article><article class="word-card blue-word-card"><div class="word-card-head"><span><i class="team-dot"></i> YOUR WORD</span><span id="blue-streak" class="streak">0 STREAK</span></div><div id="blue-word" class="word-display">—</div></article></div>
+        <div class="input-row"><input id="typing" class="text-input typing-input" placeholder="Type your team's word…" autocomplete="off" autocapitalize="none" spellcheck="false"><button id="submit-word" class="button primary">PULL! ↗</button><button id="freeze" class="button freeze" disabled>❄ <span>Freeze</span></button></div><div id="play-hint" class="play-hint">Enter the word to pull. Longer words pull harder.</div>
+      </div>
+      <div id="results" class="results-panel hidden"><div class="result-confetti" aria-hidden="true"></div><div class="eyebrow">ROUND COMPLETE</div><h2 id="result-title">RED TEAM WINS!</h2><p id="result-subtitle">The flag has crossed the line.</p><div class="result-score"><div class="red-score"><span>RED TEAM</span><b id="final-red">0</b></div><div class="score-divider">—</div><div class="blue-score"><span>BLUE TEAM</span><b id="final-blue">0</b></div></div><div class="mvp" id="mvp"></div><div class="stats-head"><span>PLAYER STATS</span><span>POINTS · WORDS · BEST STREAK</span></div><div id="stats" class="stats-list"></div><div class="result-actions"><button id="rematch" class="button primary">Rematch <span>↻</span></button><button id="back-home" class="button ghost">Back to home</button></div></div>
+    </section>
+    <div id="toast" class="toast hidden" role="status"></div>
+    <footer><span>BUILT FOR QUICK THINKERS</span><span>© TUG OF WORDS</span></footer>
+  </main><script src="/app.js" defer></script>
+</body></html>
